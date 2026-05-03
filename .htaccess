@@ -1,0 +1,7 @@
+DirectoryIndex index.php index.html
+
+<FilesMatch "^(config\.php|README\.md|server\.js|app\.js|admin\.js|login\.js)$">
+  Require all denied
+</FilesMatch>
+
+RedirectMatch 403 ^/(includes|database|content|data|Documentacion)(/.*)?$

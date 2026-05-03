@@ -1,0 +1,14 @@
+CREATE TABLE IF NOT EXISTS artworks (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    slug VARCHAR(180) NOT NULL UNIQUE,
+    title VARCHAR(255) NOT NULL,
+    year SMALLINT UNSIGNED NULL,
+    dimensions VARCHAR(120) NOT NULL,
+    technique VARCHAR(180) NOT NULL,
+    description TEXT NOT NULL,
+    tags_json LONGTEXT NOT NULL,
+    image_path VARCHAR(255) NOT NULL,
+    is_featured TINYINT(1) NOT NULL DEFAULT 0,
+    created_at DATETIME NOT NULL,
+    updated_at DATETIME NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

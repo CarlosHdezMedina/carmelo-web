@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alegria Fria | Pintura contemporanea</title>
+    <meta
+      name="description"
+      content="Galeria de obras de Alegria Fria con filtros tematicos, ficha ampliada y acceso al panel de administracion."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <nav class="topbar">
+          <span class="brand">Alegria Fria</span>
+          <div class="topbar-links">
+            <a
+              class="instagram-link"
+              href="https://www.instagram.com/alegriafria1/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Abrir Instagram de Alegria Fria en una nueva ventana"
+            >
+              <svg
+                class="instagram-icon"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  fill="currentColor"
+                  d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5Zm8.88 1.12a1.13 1.13 0 1 1 0 2.26 1.13 1.13 0 0 1 0-2.26ZM12 6.5A5.5 5.5 0 1 1 6.5 12 5.5 5.5 0 0 1 12 6.5Zm0 1.5A4 4 0 1 0 16 12a4 4 0 0 0-4-4Z"
+                />
+              </svg>
+            </a>
+            <a class="admin-link" href="/login.html">Panel de administracion</a>
+          </div>
+        </nav>
+
+        <section class="hero-content">
+          <div class="hero-copy">
+            <p class="eyebrow">Pintura contemporanea</p>
+            <h1>Una galeria para descubrir cada obra con su propia presencia.</h1>
+            <p class="intro">
+              Alegria Fria reune retratos, amores imposibles y seres carmelianos
+              en un lenguaje pictorico que transita entre lo simbolico y lo
+              intimista. La galeria permite recorrer todas las piezas en
+              miniatura y abrir cada cuadro en grande con su informacion.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#galeria">Explorar obras</a>
+              <a class="button button-secondary" href="/login.html"
+                >Gestionar catalogo</a
+              >
+            </div>
+          </div>
+
+          <aside class="hero-note">
+            <p class="note-label">Presentacion breve</p>
+            <p>
+              Un espacio web pensado para mostrar la obra con claridad, darla a
+              conocer y facilitar la incorporacion de nuevas piezas desde un
+              panel independiente.
+            </p>
+          </aside>
+        </section>
+      </header>
+
+      <main>
+        <section class="section featured-section" id="destacada">
+          <div id="featured-artwork" class="featured-artwork"></div>
+        </section>
+
+        <section class="section section-gallery" id="galeria">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Galeria</p>
+              <h2>Todas las obras</h2>
+            </div>
+            <p class="section-text">
+              La galeria muestra todas las obras en miniatura. Haz clic sobre
+              cualquiera para verla en grande y consultar su ficha completa.
+            </p>
+          </div>
+
+          <div class="filters" id="filters"></div>
+          <div class="gallery-grid" id="gallery"></div>
+        </section>
+      </main>
+    </div>
+
+    <dialog id="artwork-dialog" class="artwork-dialog">
+      <button class="dialog-close" id="close-dialog" type="button">Cerrar</button>
+      <div class="dialog-layout">
+        <div class="dialog-image-wrap">
+          <img id="detail-image" class="dialog-image" alt="" />
+        </div>
+        <div class="dialog-body">
+          <p class="eyebrow">Ficha de la obra</p>
+          <h2 id="detail-title"></h2>
+          <p class="dialog-meta">
+            <strong>Tamano:</strong> <span id="detail-dimensions"></span>
+          </p>
+          <p class="dialog-meta">
+            <strong>Tecnica:</strong> <span id="detail-technique"></span>
+          </p>
+          <div class="tag-list" id="detail-tags"></div>
+          <p class="dialog-description" id="detail-description"></p>
+        </div>
+      </div>
+    </dialog>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>

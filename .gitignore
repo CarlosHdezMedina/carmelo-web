@@ -1,0 +1,10 @@
+.DS_Store
+Thumbs.db
+
+/uploads/artworks/*
+!/uploads/artworks/.gitkeep
+
+/vendor/
+/node_modules/
+
+/config.local.php

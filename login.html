@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Acceso administracion | Alegria Fria</title>
+    <meta
+      name="description"
+      content="Pantalla de acceso al panel privado de Alegria Fria."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell page-shell-login">
+      <section class="section login-section">
+        <div class="login-card">
+          <p class="eyebrow">Acceso privado</p>
+          <h1 class="login-title">Panel de administracion</h1>
+          <p class="section-text">
+            Solo el pintor o el webmaster pueden entrar a esta zona privada.
+          </p>
+
+          <form class="artwork-form login-form" action="/login" method="post">
+            <label>
+              Usuario
+              <input type="text" name="username" autocomplete="username" required />
+            </label>
+
+            <label>
+              Contrasena
+              <input
+                type="password"
+                name="password"
+                autocomplete="current-password"
+                required
+              />
+            </label>
+
+            <button class="button button-primary form-span" type="submit">
+              Entrar
+            </button>
+          </form>
+
+          <p class="form-status is-hidden" id="login-error">
+            Usuario o contrasena incorrectos.
+          </p>
+
+          <a class="admin-link login-back-link" href="/">Volver a la galeria</a>
+        </div>
+      </section>
+    </div>
+
+    <script src="login.js" type="module"></script>
+  </body>
+</html>

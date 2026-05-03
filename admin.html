@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panel de administracion | Alegria Fria</title>
+    <meta
+      name="description"
+      content="Panel de administracion para anadir nuevas obras al catalogo de Alegria Fria."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero admin-hero">
+        <nav class="topbar">
+          <span class="brand">Alegria Fria</span>
+          <div class="topbar-links">
+            <a class="instagram-link" href="/">Volver a la galeria</a>
+            <form class="logout-form" action="/logout" method="post">
+              <button class="admin-link admin-link-button" type="submit">Cerrar sesion</button>
+            </form>
+            <a
+              class="instagram-link"
+              href="https://www.instagram.com/alegriafria1/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Abrir Instagram de Alegria Fria en una nueva ventana"
+            >
+              <svg
+                class="instagram-icon"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  fill="currentColor"
+                  d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5Zm8.88 1.12a1.13 1.13 0 1 1 0 2.26 1.13 1.13 0 0 1 0-2.26ZM12 6.5A5.5 5.5 0 1 1 6.5 12 5.5 5.5 0 0 1 12 6.5Zm0 1.5A4 4 0 1 0 16 12a4 4 0 0 0-4-4Z"
+                />
+              </svg>
+            </a>
+          </div>
+        </nav>
+
+        <section class="hero-content admin-layout">
+          <div class="hero-copy">
+            <p class="eyebrow">Administracion</p>
+            <h1>Sube nuevas obras sin tocar la portada.</h1>
+            <p class="intro">
+              Desde aqui puedes adjuntar la imagen del cuadro, indicar titulo,
+              dimensiones, tecnica, descripcion y etiquetas. La imagen se guarda
+              en el proyecto y la ficha pasa a formar parte de la galeria.
+            </p>
+          </div>
+
+          <aside class="hero-note">
+            <p class="note-label">Como funciona</p>
+            <p>
+              Las imagenes se almacenan en <code>assets/artworks/</code> y los
+              datos de cada obra en <code>data/artworks.json</code>.
+            </p>
+          </aside>
+        </section>
+      </header>
+
+      <main>
+        <section class="section">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Nueva obra</p>
+              <h2 id="form-title">Formulario de alta</h2>
+            </div>
+            <p class="section-text">
+              Si una imagen ya existe en la carpeta de obras pero no esta en el
+              catalogo, tambien se mostrara como pendiente de completar.
+            </p>
+          </div>
+
+          <form class="artwork-form" id="admin-form">
+            <input type="hidden" name="artworkId" />
+            <label>
+              Titulo
+              <input type="text" name="title" placeholder="Ej. La visita" required />
+            </label>
+
+            <label>
+              Dimensiones
+              <input
+                type="text"
+                name="dimensions"
+                placeholder="Ej. 100 x 80 cm"
+                required
+              />
+            </label>
+
+            <label>
+              Tecnica
+              <input
+                type="text"
+                name="technique"
+                placeholder="Ej. Oleo sobre lienzo"
+                required
+              />
+            </label>
+
+            <label class="form-span">
+              Etiquetas
+              <div class="tag-editor">
+                <div class="selected-tags" id="selected-tags"></div>
+                <div class="tag-input-row">
+                  <input
+                    type="text"
+                    id="tag-input"
+                    list="existing-tags"
+                    placeholder="Elige una etiqueta existente o escribe una nueva"
+                  />
+                  <button class="button button-secondary" type="button" id="add-tag-button">
+                    Anadir etiqueta
+                  </button>
+                </div>
+                <datalist id="existing-tags"></datalist>
+                <p class="input-help">Sugerencias de etiquetas existentes y opcion de crear una nueva.</p>
+              </div>
+              <input type="hidden" name="tags" required />
+            </label>
+
+            <label class="form-span">
+              Descripcion
+              <textarea
+                name="description"
+                rows="5"
+                placeholder="Texto breve sobre la obra"
+              ></textarea>
+            </label>
+
+            <label class="checkbox-field form-span">
+              <input type="checkbox" name="isFeatured" value="true" />
+              <span>Marcar como obra destacada</span>
+            </label>
+
+            <label class="file-field">
+              Imagen del cuadro
+              <input type="file" name="image" accept="image/*" />
+            </label>
+
+            <div class="form-actions form-span">
+              <button class="button button-primary" type="submit" id="submit-button">
+                Guardar obra
+              </button>
+              <button class="button button-secondary is-hidden" type="button" id="cancel-edit">
+                Cancelar edicion
+              </button>
+            </div>
+          </form>
+
+          <p class="form-status" id="form-status"></p>
+        </section>
+
+        <section class="section">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Catalogo actual</p>
+              <h2>Obras registradas</h2>
+            </div>
+            <p class="section-text">
+              Vista rapida de las obras ya incorporadas a la galeria.
+            </p>
+          </div>
+
+          <div class="admin-grid" id="admin-gallery"></div>
+        </section>
+      </main>
+    </div>
+
+    <dialog id="admin-dialog" class="artwork-dialog admin-dialog">
+      <button class="dialog-close" id="close-admin-dialog" type="button">Cerrar</button>
+      <div class="dialog-layout admin-dialog-layout">
+        <div class="dialog-image-wrap admin-dialog-image-wrap">
+          <img id="admin-detail-image" class="dialog-image admin-detail-image" alt="" />
+        </div>
+        <div class="dialog-body">
+          <p class="eyebrow">Editar obra</p>
+          <form class="artwork-form admin-detail-form" id="admin-detail-form">
+            <input type="hidden" name="artworkId" />
+            <label>
+              Titulo
+              <input type="text" name="title" required />
+            </label>
+
+            <label>
+              Dimensiones
+              <input type="text" name="dimensions" required />
+            </label>
+
+            <label>
+              Tecnica
+              <input type="text" name="technique" required />
+            </label>
+
+            <label class="form-span">
+              Etiquetas
+              <div class="tag-editor">
+                <div class="selected-tags" id="detail-selected-tags"></div>
+                <div class="tag-input-row">
+                  <input
+                    type="text"
+                    id="detail-tag-input"
+                    list="existing-tags"
+                    placeholder="Elige una etiqueta existente o escribe una nueva"
+                  />
+                  <button class="button button-secondary" type="button" id="detail-add-tag-button">
+                    Anadir etiqueta
+                  </button>
+                </div>
+                <p class="input-help">Puedes reutilizar etiquetas existentes o crear otras nuevas.</p>
+              </div>
+              <input type="hidden" name="tags" required />
+            </label>
+
+            <label class="form-span">
+              Descripcion
+              <textarea name="description" rows="5"></textarea>
+            </label>
+
+            <label class="checkbox-field form-span">
+              <input type="checkbox" name="isFeatured" value="true" />
+              <span>Marcar como obra destacada</span>
+            </label>
+
+            <label class="file-field">
+              Sustituir imagen
+              <input type="file" name="image" accept="image/*" />
+            </label>
+
+            <div class="form-actions form-span">
+              <button class="button button-primary" type="submit">Guardar cambios</button>
+              <button class="button button-danger" type="button" id="delete-artwork-button">
+                Borrar obra
+              </button>
+            </div>
+          </form>
+          <p class="form-status" id="detail-form-status"></p>
+        </div>
+      </div>
+    </dialog>
+
+    <script src="admin.js" type="module"></script>
+  </body>
+</html>

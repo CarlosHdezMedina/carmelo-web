@@ -1,0 +1,132 @@
+[
+  {
+    "id": "obra-trio",
+    "title": "Trio",
+    "dimensions": "Dimensiones no indicadas",
+    "technique": "Tecnica no indicada",
+    "description": "Obra incorporada desde la carpeta de ejemplos iniciales.",
+    "tags": [
+      "seres carmelianos"
+    ],
+    "image": "/assets/artworks/trio.jpeg",
+    "createdAt": "2026-04-25T12:03:00.000Z",
+    "isFeatured": false
+  },
+  {
+    "id": "obra-pareja-espaldas",
+    "title": "Pareja Espaldas",
+    "dimensions": "20x90",
+    "technique": "Mixta",
+    "description": "seres indescriptibles",
+    "tags": [
+      "amores imposibles"
+    ],
+    "image": "/assets/artworks/parejaEspaldas.jpeg",
+    "createdAt": "2026-04-25T12:02:00.000Z",
+    "isFeatured": false
+  },
+  {
+    "id": "obra-paseando-perro",
+    "title": "Paseando Perro",
+    "dimensions": "Dimensiones no indicadas",
+    "technique": "Tecnica no indicada",
+    "description": "Obra incorporada desde la carpeta de ejemplos iniciales.",
+    "tags": [
+      "amores imposibles"
+    ],
+    "image": "/assets/artworks/PaseandoPerro.jpeg",
+    "createdAt": "2026-04-25T12:01:00.000Z",
+    "isFeatured": true
+  },
+  {
+    "id": "obra-fotocasa",
+    "title": "Fotocasa",
+    "dimensions": "Dimensiones no indicadas",
+    "technique": "Tecnica no indicada",
+    "description": "Obra incorporada desde la carpeta de ejemplos iniciales.",
+    "tags": [
+      "retratos"
+    ],
+    "image": "/assets/artworks/fotocasa.jpeg",
+    "createdAt": "2026-04-25T12:00:00.000Z",
+    "isFeatured": false
+  },
+  {
+    "id": "obra-parque-infantil-surrealista-1777116715513",
+    "title": "Parque Infantil Surrealista",
+    "dimensions": "40x30",
+    "technique": "Mixta Digital",
+    "description": "Perpespectiva carmeliana sin futuro definido",
+    "tags": [
+      "paisajes"
+    ],
+    "image": "/assets/artworks/1777116715500-parque-infantil-surrealista.jpeg",
+    "createdAt": "2026-04-25T11:31:55.513Z",
+    "isFeatured": false
+  },
+  {
+    "id": "obra-2",
+    "title": "2",
+    "dimensions": "Dimensiones no indicadas",
+    "technique": "Tecnica no indicada",
+    "description": "Obra detectada automaticamente en la carpeta de imagenes.",
+    "tags": [
+      "sin clasificar"
+    ],
+    "image": "/assets/artworks/2.jpeg",
+    "createdAt": "2026-04-25T11:15:20.281Z",
+    "isFeatured": false
+  },
+  {
+    "id": "obra-3",
+    "title": "atardecer",
+    "dimensions": "20x30",
+    "technique": "digital",
+    "description": "ZZZZ",
+    "tags": [
+      "sin clasificar"
+    ],
+    "image": "/assets/artworks/3.jpeg",
+    "createdAt": "2026-04-25T11:15:20.281Z",
+    "isFeatured": false
+  },
+  {
+    "id": "obra-4",
+    "title": "4",
+    "dimensions": "Dimensiones no indicadas",
+    "technique": "Tecnica no indicada",
+    "description": "Obra detectada automaticamente en la carpeta de imagenes.",
+    "tags": [
+      "sin clasificar"
+    ],
+    "image": "/assets/artworks/4.jpeg",
+    "createdAt": "2026-04-25T11:15:20.281Z",
+    "isFeatured": false
+  },
+  {
+    "id": "obra-lateral",
+    "title": "Lateral",
+    "dimensions": "Dimensiones no indicadas",
+    "technique": "Tecnica no indicada",
+    "description": "Obra detectada automaticamente en la carpeta de imagenes.",
+    "tags": [
+      "sin clasificar"
+    ],
+    "image": "/assets/artworks/lateral.jpeg",
+    "createdAt": "2026-04-25T11:15:20.281Z",
+    "isFeatured": false
+  },
+  {
+    "id": "obra-1",
+    "title": "1",
+    "dimensions": "Dimensiones no indicadas",
+    "technique": "Tecnica no indicada",
+    "description": "Obra detectada automaticamente en la carpeta de imagenes.",
+    "tags": [
+      "sin clasificar"
+    ],
+    "image": "/assets/artworks/1.jpeg",
+    "createdAt": "2026-04-25T11:15:20.279Z",
+    "isFeatured": false
+  }
+]
